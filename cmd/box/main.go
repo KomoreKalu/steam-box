@@ -52,7 +52,7 @@ func main() {
 		panic("GetPlayTime err:" + err.Error())
 	}
 
-	filename := "🎮 最近我在玩…"
+	filename := "Steam Recently Played Games"
 
 	if updateGist {
 		gist, err := box.GetGist(ctx, gistID)
