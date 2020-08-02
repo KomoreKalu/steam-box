@@ -8,7 +8,7 @@ on:
     branches:
       - master
   schedule:
-    - cron: "0 * * * *"
+    - cron: "0 */4 * * *"
     
 
 jobs:
@@ -18,7 +18,7 @@ jobs:
     runs-on: ubuntu-latest
     env:
           GH_TOKEN: ${{ secrets.GH_TOKEN }}
-          GIST_ID: 62fa160542e61ac240820bc0b02b5632
+          GIST_ID: afc28dc1b85d9bc5cebfbe9d5e3639db
           STEAM_API_KEY: ${{ secrets.STEAM_API_KEY }}
           STEAM_ID: ${{ secrets.STEAM_ID }}
     steps:
