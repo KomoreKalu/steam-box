@@ -66,7 +66,7 @@ func (b *Box) GetPlayTime(ctx context.Context, steamID uint64) ([]string, error)
 	var lines []string
 
 	if gameRet.TotalCount == 0 {
-		lines = append(lines, "🚫 啊哦，最近好像没有玩过游戏呢")
+		lines = append(lines, "Haven't played games recently")
 		return lines, nil
 	}
 
@@ -76,7 +76,7 @@ func (b *Box) GetPlayTime(ctx context.Context, steamID uint64) ([]string, error)
 	})
 
 	for _, game := range gameRet.Games {
-		if max >= 5 {
+		if max >= 3 {
 			break
 		}
 
@@ -84,7 +84,7 @@ func (b *Box) GetPlayTime(ctx context.Context, steamID uint64) ([]string, error)
 		mins := int(math.Floor(float64(game.Playtime2Weeks % 60)))
 
 		line := pad(getNameEmoji(game.Appid, game.Name), " ", 35) + " " +
-			pad(fmt.Sprintf("🕘 %d hrs %d mins", hours, mins), "", 16)
+			pad(fmt.Sprintf("%d hrs %d mins", hours, mins), "", 16)
 		lines = append(lines, line)
 		max++
 	}
@@ -147,5 +147,5 @@ func getNameEmoji(id int, name string) string {
 		return emoji + name
 	}
 
-	return "🎮 " + name
+	return name
 }
