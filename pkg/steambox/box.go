@@ -132,15 +132,7 @@ func pad(s, pad string, targetLength int) string {
 func getNameEmoji(id int, name string) string {
 	// hard code some game's emoji
 	var nameEmojiMap = map[int]string{
-		730:    "🔫 ", // CS:GO
-		222880: "🔫 ", // Insurgency
-		265630: "🔫 ", // Fistful of Frags
-		271590: "🚓 ", // GTA 5
-		578080: "🍳 ", // PUBG
-		431960: "💻 ", // Wallpaper Engine
-		8930:   "🌏 ", // Sid Meier's Civilization V
-		644560: "🔞 ", // Mirror
-		359550: "🔫 ", // Tom Clancy's Rainbow Six Siege
+	
 	}
 
 	if emoji, ok := nameEmojiMap[id]; ok {
